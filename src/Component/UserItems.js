@@ -10,7 +10,11 @@ function UserItems(props) {
       <div className="col-md-2"> <h4>Country</h4> {props.user.country}</div>
       <div className="submit">
         <button className="renew"> Update</button>
-        <button className="remove">Delete</button>
+        <button className="remove" onClick={() => {
+          props.delete(props.user.id);
+
+        }}
+        > Delete</button>
       </div>
     </div>
   );

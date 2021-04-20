@@ -11,6 +11,11 @@ function App() {
     setUsers([...users, user]);
   }
 
+  function deleteUser(id) {
+    let newUsers = users.filter((user) => user.id !== id);
+    setUsers(newUsers);
+  }
+
   return (
     <div className="container">
       <div className="row">
@@ -19,7 +24,7 @@ function App() {
           <UserForms addUser={addUser} />
         </div>
         <div className="col-md-6">
-          <UserList allUsers={users} />
+          <UserList allUsers={users} delete={deleteUser}/>
         </div>
       </div>
     </div>
