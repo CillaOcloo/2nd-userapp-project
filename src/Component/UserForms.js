@@ -1,4 +1,8 @@
 import React, { useState }   from 'react';
+import { connect } from 'react-redux';
+import addUser from '../action/UserAction';
+
+
   
 function UserForms(props) {
 
@@ -77,4 +81,4 @@ function UserForms(props) {
         
     )
 }
-export default UserForms;
+export default connect(null,{addUser})(UserForms);

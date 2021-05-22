@@ -1,14 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import UserItems from './UserItems';
+
 
 function UserList(props) {
   return (
     <div>
-      {props.allUsers.map((user) => (
+      {props.users.map((user) => (
         <UserItems user={user} delete={props.delete}/>
       ))}
     </div>
   );
 }
 
-export default UserList;
+
+ function mapStateToProps(state) {
+  return {
+    users:state.users,
+  }
+}
+
+
+export default connect(mapStateToProps,{}) (UserList);

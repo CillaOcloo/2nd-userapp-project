@@ -1,9 +1,11 @@
 const initialState = {
-    users: [{ name:"Pricilla", userId:"543276", gender:"female"}]
+    users: []
 };
-const usersReducer =(state= 'initialState',action) => {
+const usersReducer =(state= initialState,action) => {
     switch(action.type) {
         case "ADD_USER":
+            console.log(action.payload)
+            return {...state,users:[...state.users,action.payload]};
 
           break;
 
